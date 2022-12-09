@@ -64,8 +64,9 @@
             </div><br>
             Examples of links you could test (but feel free to use your own!):<br><br>
             <div style="font-weight: normal">
-            http://meredithmccardle.com/wp-content/uploads/2016/04/13062270_10209347097255012_1441857544897412486_n.jpg <br><br>
-            https://miro.medium.com/max/550/1*BFqPlXOj4XIQwDYqhGm2Mw.png
+                http://meredithmccardle.com/wp-content/uploads/2016/04/13062270_10209347097255012_1441857544897412486_n.jpg
+                <br><br>
+                https://miro.medium.com/max/550/1*BFqPlXOj4XIQwDYqhGm2Mw.png
             </div>
             <h1>Try It Out:</h1>
             <div style="font-size: 10px">*Disclaimer: Do keep in mind that this implementation utilizes a continously
@@ -112,16 +113,16 @@
     <script>
         $("#submit-button").click(function () {
             var input = $("#message").val()
-                $.post('http://137.184.74.76:3000/textextraction', {
-                    image_url: input
-                }, function (response) {
-                    $("#initial-image").html('<img src="' + input + '" alt="Initial Image" height="250">')
-                    $("#response-text").text(response.data)
-                }, "json").fail(function (response) {
-                    $("#response-text").text(response.responseJSON.data)
-                    $("#initial-image").text(response.responseJSON.data)
-                });
-            }
+            $.post('http://137.184.74.76:3000/textextraction', {
+                image_url: input
+            }, function (response) {
+                $("#initial-image").html('<img src="' + input + '" alt="Initial Image" height="250">')
+                $("#response-text").text(response.data)
+            }, "json").fail(function (response) {
+                $("#response-text").text(response.responseJSON.data)
+                $("#initial-image").text(response.responseJSON.data)
+            });
+        }
         );
 
     </script>

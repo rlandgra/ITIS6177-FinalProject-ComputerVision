@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     //This loads and implements the options for the bxSlider plugin that is found on the home page.
     $("#slider").bxSlider({
         auto: true,
@@ -9,6 +9,6 @@ $(document).ready(function(){
         speed: 3000,
         pause: 8000,
         moveSlides: 1
-    }); 
+    });
 
-} );
+});
