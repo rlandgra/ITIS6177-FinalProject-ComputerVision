@@ -1,0 +1,16 @@
+node_modules/
+.cache/
+.ssh/
+.config/
+.forever/
+.npm/
+server/config.js
+.vscode-server/
+.bash_history
+.bashrc
+.cloud-locale-test.skip
+.wget-hsts
+snap
+.profile
+config.js
+log.txt
