@@ -37,7 +37,7 @@ app.post("/textextraction", (req, res) => {
   }).catch((err) => {
     console.error(err);
     logText("/textextraction Error: " + err.message + " URL: " + req.body.image_url);
-    return res.status(400).send({ data: `Error processing image: ${err.message}` + " Please try again."});
+    return res.status(400).send({ data: `Error processing image: ${err.message}` + " Please try again." });
   });
 
 });
@@ -58,7 +58,7 @@ app.post("/imagedescription", (req, res) => {
   }).catch((err) => {
     console.error(err);
     logText("/imagedescription Error: " + err.message + " URL: " + req.body.image_url);
-    return res.status(400).send({ data: `Error processing image: ${err.message}` + " Please try again."});
+    return res.status(400).send({ data: `Error processing image: ${err.message}` + " Please try again." });
   });
 });
 
