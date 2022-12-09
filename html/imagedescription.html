@@ -47,6 +47,7 @@
     <main>
         <!--..................................................MAIN CONTENT..................................................-->
         <div class="imagedescriptionAll">
+            <!--Gives information about what the image description feature is:-->
             <h1>Image Description:</h1>
             <h2>About The Use Of The Image Description Feature:</h2>
             From Microsoft Azure's Page On The Computer Vision API About The Image Understanding Feature: "Pull from a
@@ -55,17 +56,20 @@
             <br>
             <br>
             <br>
+            <!--Creates a two wide table to show examples of a submitted image and what is returned by that-->
             <div class="row">
                 <div class="column">Example Submitted Image:<br><br><img src="images/houseonhill.jpg" width="250"
                         alt="Submitted Image"></div>
                 <div class="column">Example Returned Description:<br><br>a house on a grassy hill</div>
             </div><br>
+            <!--Provides two examples of links that the user could test, but encourages them to add their own-->
             Examples of links you could test (but feel free to use your own!):<br><br>
             <div style="font-weight: normal">
                 https://people.com/thmb/OUwxUAcTs3ATMncZyYlAbqaN2ho=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/joey-chestnut-hot-dogs-2-a674c1f6ef634721b7382de34737df25.jpg
                 <br><br>
                 https://media.istockphoto.com/id/901452436/photo/golden-retriever-dog-in-the-nature-an-autumn-day.jpg?s=612x612&w=0&k=20&c=1Qo40619S2aPK7gJzt9HiG2V0rvaCNndIoSHOF66p9Y=
             </div>
+            <!--Gives information on how the user can try out the image description feature-->
             <h1>Try It Out:</h1>
             <div style="font-size: 10px">*Disclaimer: Do keep in mind that this implementation utilizes a continously
                 evolving AI made by Microsoft Azure. Some of the information generated (by the AI) about the submitted
@@ -73,7 +77,7 @@
                 not be correct.*</div>
             <br><br>In order for the Computer Vision API to describe your image please submit
             the image in the form of a link with a .jpg or .png format in the text box below:<br><br>
-
+            <!--Creates a form to allow the user to submit a link to be analyzed-->
             <div class="generalFormForm generalFormCol">
                 <label for="message">Submit a link to your image with a .jpg or .png format: </label><br>
                 <textarea id="message" name="message"
@@ -81,6 +85,7 @@
                     required></textarea><br>
                 <button id="submit-button">Submit</button>
             </div>
+            <!--Makes a space for the description of the image to be populated after it is processed-->
             <h1>The Description Of Your Image:</h1>
             <div id='response-description'>
                 The description of your image will appear here after you submit your image.
@@ -88,6 +93,7 @@
             <br>
             <br>
             <br>
+            <!--Makes a space for the Tags That Factored Into The Description of the image to be populated after it is processed-->
             <h2>Information Of The Tags That Factored Into The Description Of Your Image:</h2>
             <div id='response-tags'>
                 The informations of the tags that factored into the description of your image will appear here after you
@@ -96,6 +102,7 @@
             <br>
             <br>
             <br>
+            <!--Makes a space for the Initial Image to be populated after it is processed-->
             <h2>Initial Image:</h2>
             <div id='initial-image'>
                 The initial image you submitted, once submitted, will appear here.
@@ -114,11 +121,14 @@
     <!--..................................................END FOOTER..................................................-->
 
     <!--..................................................SCRIPTS..................................................-->
+    <!--Creates a script to send the submitted image to the image description API that is located on the server side. This is done to prevent exposing API keys in the HTML-->
     <script>
         $("#submit-button").click(function () {
             var input = $("#message").val()
+            //Sends the image to the image description API
             $.post('http://137.184.74.76:3000/imagedescription', {
                 image_url: input
+                //Processes the response so that it can be displayed on the page.
             }, function (response) {
                 $("#initial-image").html('<img src="' + input + '" alt="Initial Image" height="250">')
                 if (response.caption) {
@@ -128,6 +138,7 @@
                 } else {
                     $("#response-description").text(response.data)
                 }
+                //Processes the response in the case that there are errors so that they can be displayed on the page.
             }, "json").fail(function (response) {
                 $("#response-description").text(response.responseJSON.data)
                 $("#response-tags").text(response.responseJSON.data)
@@ -137,12 +148,6 @@
         );
 
     </script>
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-
-
     <!--..................................................END SCRIPTS..................................................-->
 </body>
 

@@ -46,6 +46,7 @@
     <main>
         <!--..................................................MAIN CONTENT..................................................-->
         <div class="textextractionAll">
+            <!--Gives information about what the text extraction feature is:-->
             <h1>Text Extraction:</h1>
             <h2>About The Use Of The Text Extraction Feature:</h2>
             From Microsoft Azure's Page On The Computer Vision API: "Extract printed and handwritten text from images
@@ -53,6 +54,7 @@
             <br>
             <br>
             <br>
+            <!--Creates a two wide table to show examples of a submitted image and what is returned by that-->
             <div class="row">
                 <div class="column">Example Submitted Image:<br><br><img src="images/testocr.png" width="250"
                         alt="Submitted Image"></div>
@@ -62,12 +64,14 @@
                     brown dog jumped over the lazy fox. The quick brown dog jumped over the lazy fox. The quick brown
                     dog jumped over the lazy fox.</div>
             </div><br>
+            <!--Provides two examples of links that the user could test, but encourages them to add their own-->
             Examples of links you could test (but feel free to use your own!):<br><br>
             <div style="font-weight: normal">
                 http://meredithmccardle.com/wp-content/uploads/2016/04/13062270_10209347097255012_1441857544897412486_n.jpg
                 <br><br>
                 https://miro.medium.com/max/550/1*BFqPlXOj4XIQwDYqhGm2Mw.png
             </div>
+            <!--Gives information on how the user can try out the text extraction feature-->
             <h1>Try It Out:</h1>
             <div style="font-size: 10px">*Disclaimer: Do keep in mind that this implementation utilizes a continously
                 evolving AI made by Microsoft Azure. Some of the information generated (by the AI) about the submitted
@@ -76,7 +80,7 @@
             <br><br>In order for the Computer Vision API to extract printed and handwritten text from your image please
             submit
             the image in the form of a link with a .jpg or .png format in the text box below:<br><br>
-
+            <!--Creates a form to allow the user to submit a link to be analyzed-->
             <div class="generalFormForm generalFormCol">
                 <label for="message">Submit a link to your image with a .jpg or .png format: </label><br>
                 <textarea id="message" name="message"
@@ -84,6 +88,7 @@
                     required></textarea><br>
                 <button id="submit-button">Submit</button>
             </div>
+            <!--Makes a space for the text from the image to be populated after it is processed-->
             <h1>The Text Extracted From Your Image:</h1>
             <div id='response-text'>
                 The text from your image will appear here after you submit and image.
@@ -91,6 +96,7 @@
             <br>
             <br>
             <br>
+            <!--Makes a space for the Initial Image to be populated after it is processed-->
             <h2>Initial Image:</h2>
             <div id='initial-image'>
                 The initial image you submitted, once submitted, will appear here.
@@ -113,11 +119,14 @@
     <script>
         $("#submit-button").click(function () {
             var input = $("#message").val()
+            //Sends the image to the image description APIs
             $.post('http://137.184.74.76:3000/textextraction', {
                 image_url: input
+                //Processes the response so that it can be displayed on the page.
             }, function (response) {
                 $("#initial-image").html('<img src="' + input + '" alt="Initial Image" height="250">')
                 $("#response-text").text(response.data)
+                //Processes the response in the case that there are errors so that they can be displayed on the page.
             }, "json").fail(function (response) {
                 $("#response-text").text(response.responseJSON.data)
                 $("#initial-image").text(response.responseJSON.data)
@@ -126,12 +135,6 @@
         );
 
     </script>
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
-
-
     <!--..................................................END SCRIPTS..................................................-->
 </body>
 
