@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<!--CommentTemplate-->
+<!-- Sets some of the main sources for the page: -->
+
+<head>
+    <!-- Sets page title and default meta atributes for the website. -->
+    <title>ITIS 6177 - Final Project - Computer Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Description" content="ITIS 6177 - Final Project - Computer Vision">
+    <!-- Adds reponsivness for the webpage-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    <!--This comes last -->
+    <link rel="stylesheet" href="websitecss.css">
+    <!-- Sets the icon for the webpage -->
+    <link rel="icon" href="images/computervisionicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--..................................................HEADER.................................................. -->
+    <!-- Adds an interactive website header -->
+    <!--Used help from w3 schools: https://www.w3schools.com/howto/howto_css_responsive_header.asp-->
+    <div class="websiteHeader">
+        <!--Creates a reference between the logo and the url-->
+        <a href="/index.html" class="logo"><img src="images/computervisionicon.png" height="60"
+                alt="Computer Vision Icon"></a>
+        <!--Sets the information for the right side of the header-->
+        <div class="websiteHeaderLinks">
+            <!--Creates the link for the Home page and sets it as the active page-->
+            <a class="current" href="/index.html">Home</a>
+            <!--Creates the link for the About page-->
+            <a href="/about.html">About</a>
+            <!--Creates the link for the documentation page-->
+            <a href="/documentation.html">Documentation</a>
+            <!--Creates the link for the Handwriting Extraction page-->
+            <a href="/textextraction.html">Text Extraction</a>
+            <!--Creates the link for the Image Description page-->
+            <a href="/imagedescription.html">Image Description</a>
+
+        </div>
+    </div>
+    <!--..................................................END HEADER..................................................-->
+    <main>
+        <div class="homeAll">
+            <!-- Adds in a little information about the site-->
+            <h1>Quick Introduction About The Site:</h1>
+            <p>This site features a final project for ITIS 6177 - System Integration at the University of North Carolina
+                Charlotte that implements Microsoft Azures's "Computer Vision" API which is an AI service that analyzes
+                content in images and video.</p>
+            <h2>Examples Of The Abilities of Microsoft Azures's "Computer Vision" API That This Site/Project Implements:
+            </h2>
+            <!-- Implements the imformation, pictures, and code needed for the bxslider plugin-->
+            <ul id="slider">
+                <li><img src="/images/textextractionpicture1.png" width="600"
+                        alt="Image Of Text Extraction Submitted Image And Its Text"></li>
+                <li><img src="/images/houseonhillwithdescription.png" width="600" alt="Example image of image description feature"></li>
+                <li><img src="/images/textextractionpicture2.png" width="600" alt="Image Of Text Extraction Submitted Image And Its Text"></li>
+                <li><img src="/images/imagedescription2.png" width="600" alt="Example image of image description feature"></li>
+                <li><img src="/images/textextractionpicture3.png" width="600" alt="Image Of Text Extraction Submitted Image And Its Text"></li>
+                <li><img src="/images/imagedescription3.png" width="600" alt="Example image of image description feature"></li>
+            </ul>
+            <h2>Learn more about these features that have been implemented on the about page!</h2>
+        </div>
+    </main>
+    <!--..................................................FOOTER..................................................-->
+    <!-- Adds in footer-->
+    <footer>
+        <div class="websiteFooter">
+            <p>&#169; Ross Landgraf 2022. All rights reserved.</p>
+        </div>
+    </footer>
+    <!--..................................................END FOOTER..................................................-->
+
+    <!--..................................................SCRIPTS.....................................................-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--Bxslider scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <!--This comes last -->
+    <script src="mainjs.js"></script>
+</body>
+
+</html>

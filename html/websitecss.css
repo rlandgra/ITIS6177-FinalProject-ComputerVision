@@ -1,0 +1,427 @@
+/*Background Image*/
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden
+}
+
+/*----------------------------------------------------------------BEGIN GENERAL CSS----------------------------------------------------------------*/
+/*Sets the styling for the h1 element*/
+h1 {
+    color: #00529b;
+}
+
+/*Sets the styling for the h2 element*/
+h2 {
+    color: #00529b;
+}
+
+/*Sets font type for all text:*/
+* {
+    font-family: Verdana;
+}
+
+/*Sets the styling to add responsivness to the images*/
+img {
+    max-width: 100%
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*----------------------------------------------------------------END GENERAL CSS----------------------------------------------------------------*/
+/*----------------------------------------------------------------BEGIN HEADER CSS----------------------------------------------------------------*/
+/*Sets the background color for the header and adds padding*/
+.websiteHeader {
+    overflow: hidden;
+    background-color: #00529b;
+    padding: 10px;
+}
+
+/*Sets the styling for the links within the header*/
+.websiteHeader a {
+    float: left;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+/*Sets the styling for what is being hovered on in the header*/
+.websiteHeader a:hover {
+    background-color: #2f33379e;
+    color: white;
+}
+
+/*Sets the styling for the current element in the header*/
+.websiteHeader a.current {
+    background-color: #2f3337;
+    color: white;
+}
+
+/*Sets the styling for the links in the header*/
+.websiteHeaderLinks {
+    float: left;
+    padding-left: 275px;
+    padding-top: 10px;
+}
+
+/*----------------------------------------------------------------END HEADER CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN Home CSS----------------------------------------------------------------*/
+/*Sets the styling for all of the home page*/
+.homeAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets the styling for the img elements on the page*/
+.productPictures img {
+    border: 5px solid #00529b;
+    vertical-align: top;
+}
+
+/*Sets the styling for tabs on the tabs widget*/
+.ui-tabs-anchor {
+    font-weight: bold;
+}
+
+/*Sets the styling for tabs panel on the tabs widget*/
+.ui-tabs-panel {
+    font-weight: normal;
+}
+
+li.ui-tabs-active {
+    background-color: #00529b !important;
+}
+
+/*Sets the styling for bx-wrapper on the bxslider plugin*/
+.bx-wrapper {
+    background: #ffffff00;
+    border: #ffffff00;
+}
+
+/*----------------------------------------------------------------END Home CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN About CSS----------------------------------------------------------------*/
+/*Sets the styling for all of the page*/
+.aboutAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets the styling for the columns on the page*/
+.aboutCol {
+    width: 40%;
+    display: inline-block;
+    margin: 0px 40px 0px 40px;
+    min-width: 610px;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*Sets the styling for the informaiton section on the page*/
+.aboutInfo {
+    font-weight: normal;
+    text-align: left;
+}
+
+/*Sets the styling for the picture on the page*/
+.aboutPic {
+    text-align: center;
+}
+
+/*Sets the styling for the h2 elements on the page*/
+.aboutAll h2 {
+    margin-top: 0;
+}
+
+.aboutAll li {
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------END About CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN Text Extraction CSS----------------------------------------------------------------*/
+/*Sets the styling for all of the page*/
+.textextractionAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets the styling for the columns on the page*/
+.textextractionCol {
+    width: 40%;
+    display: inline-block;
+    margin: 0px 40px 0px 40px;
+    min-width: 610px;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*Sets the styling for the informaiton section on the page*/
+.textextractionInfo {
+    font-weight: normal;
+    text-align: left;
+}
+
+/*Sets the styling for the picture on the page*/
+.textextractionPic {
+    text-align: center;
+}
+
+/*Sets the styling for the h2 elements on the page*/
+.textextractionAll h2 {
+    margin-top: 0;
+}
+
+.textextractionAll li {
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------END Text Extraction CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN Famous People CSS----------------------------------------------------------------*/
+/*Sets the styling for all of the page*/
+.imagedescriptionAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets the styling for the columns on the page*/
+.imagedescriptionCol {
+    width: 40%;
+    display: inline-block;
+    margin: 0px 40px 0px 40px;
+    min-width: 610px;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*Sets the styling for the informaiton section on the page*/
+.imagedescriptionInfo {
+    font-weight: normal;
+    text-align: left;
+}
+
+/*Sets the styling for the picture on the page*/
+.imagedescriptionPic {
+    text-align: center;
+}
+
+/*Sets the styling for the h2 elements on the page*/
+.imagedescriptionAll h2 {
+    margin-top: 0;
+}
+
+.imagedescriptionAll li {
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------END Famous People CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN Documentation CSS----------------------------------------------------------------*/
+/*Sets the styling for all of the page*/
+.documentationAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets the styling for the columns on the page*/
+.documentationCol {
+    width: 40%;
+    display: inline-block;
+    margin: 0px 40px 0px 40px;
+    min-width: 610px;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*Sets the styling for the informaiton section on the page*/
+.documentationInfo {
+    font-weight: normal;
+    text-align: left;
+}
+
+/*Sets the styling for the picture on the page*/
+.documentationPic {
+    text-align: center;
+}
+
+/*Sets the styling for the h2 elements on the page*/
+.documentationAll h2 {
+    margin-top: 0;
+}
+
+.documentationAll li {
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------END Famous People CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN General Form CSS----------------------------------------------------------------*/
+/*Sets styling for all of the content on the page*/
+.generalFormAll {
+    background-color: #d4d4d4;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 5px 5px 5px #616161;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 650px;
+    padding: 50px;
+}
+
+/*Sets styling for each column on the page*/
+.generalFormCol {
+    width: 40%;
+    display: inline-block;
+    margin: 0px 40px 0px 40px;
+    min-width: 610px;
+    vertical-align: top;
+}
+
+/*Sets the font wright and alignment for the informational part of the page*/
+.generalFormInfo {
+    font-weight: normal;
+    text-align: left;
+}
+
+/*Sets the margin for h2 element*/
+.generalFormAll h2 {
+    margin-top: 0;
+}
+
+/*Sets the size of the text area on the form*/
+.generalFormForm textarea {
+    height: 200px;
+    width: 550px;
+}
+
+/*Sets the text allignment for the text on the form*/
+.generalFormForm {
+    text-align: left;
+}
+
+/*Sets styling for the button spaces on the form*/
+.generalFormForm button,
+textarea,
+button[type=tel],
+button[type=email] {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 10pt;
+}
+
+/*Sets syling for the submit button on the form*/
+.generalFormForm button {
+    border: none;
+    cursor: pointer;
+    background-color: #00529b;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0px;
+    border-radius: 5px;
+}
+
+/*----------------------------------------------------------------END General Form CSS----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------BEGIN FOOTER CSS----------------------------------------------------------------*/
+/*Sets styling for the footer that is across the webpage*/
+.websiteFooter {
+    background-color: #555657;
+    color: black;
+    font-weight: bold;
+    padding: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*----------------------------------------------------------------END FOOTER CSS----------------------------------------------------------------*/

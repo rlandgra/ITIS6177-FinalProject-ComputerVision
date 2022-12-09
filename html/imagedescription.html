@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<!--CommentTemplate-->
+<!-- Sets some of the main sources for the page: -->
+
+<head>
+    <!-- Sets page title and default meta atributes for the website. -->
+    <title>ITIS 6177 - Final Project - Computer Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Description" content="ITIS 6177 - Final Project - Computer Vision">
+    <!-- Adds reponsivness for the webpage-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    <!--This comes last -->
+    <link rel="stylesheet" href="websitecss.css">
+    <!-- Sets the icon for the webpage -->
+    <link rel="icon" href="images/computervisionicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--..................................................HEADER.................................................. -->
+    <!-- Adds an interactive website header -->
+    <!--Used help from w3 schools: https://www.w3schools.com/howto/howto_css_responsive_header.asp-->
+    <div class="websiteHeader">
+        <!--Creates a reference between the logo and the url-->
+        <a href="/index.html" class="logo"><img src="images/computervisionicon.png" height="60"
+                alt="Computer Vision Icon"></a>
+        <!--Sets the information for the right side of the header-->
+        <div class="websiteHeaderLinks">
+            <!--Creates the link for the Home page and sets it as the active page-->
+            <a href="/index.html">Home</a>
+            <!--Creates the link for the About page-->
+            <a href="/about.html">About</a>
+            <!--Creates the link for the documentation page-->
+            <a href="/documentation.html">Documentation</a>
+            <!--Creates the link for the Handwriting Extraction page-->
+            <a href="/textextraction.html">Text Extraction</a>
+            <!--Creates the link for the Image Description page-->
+            <a class="current" href="/imagedescription.html">Image Description</a>
+
+        </div>
+    </div>
+    <!--..................................................END HEADER..................................................-->
+    <main>
+        <!--..................................................MAIN CONTENT..................................................-->
+        <div class="imagedescriptionAll">
+            <h1>Image Description:</h1>
+            <h2>About The Use Of The Image Description Feature:</h2>
+            From Microsoft Azure's Page On The Computer Vision API About The Image Understanding Feature: "Pull from a
+            rich ontology of more than 10,000 concepts and objects to generate value from your visual assets." I
+            specifically implemented this feature to describe images based off of links that are submited.
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="column">Example Submitted Image:<br><br><img src="images/houseonhill.jpg" width="250"
+                        alt="Submitted Image"></div>
+                <div class="column">Example Returned Description:<br><br>a house on a grassy hill</div>
+            </div>
+            <h1>Try It Out:</h1>
+            <div style="font-size: 10px">*Disclaimer: Do keep in mind that this implementation utilizes a continously
+                evolving AI made by Microsoft Azure. Some of the information generated (by the AI) about the submitted images may
+                not be correct.*</div>
+            <br><br>In order for the Computer Vision API to describe your image please submit
+            the image in the form of a link with a .jpg or .png format in the text box below:<br><br>
+
+            <div class="generalFormForm generalFormCol">
+                <label for="message">Submit a link to your image with a .jpg or .png format: </label><br>
+                <textarea id="message" name="message"
+                    placeholder="Link to image with a .jpg or .png format. (Example: https://imagesite.com/images/describe-this-image.jpg)"
+                    required></textarea><br>
+                <button id="submit-button">Submit</button>
+            </div>
+            <h1>The Description Of Your Image:</h1>
+            <div id='response-description'>
+                The description of your image will appear here after you submit your image.
+            </div>
+            <br>
+            <br>
+            <br>
+            <h2>Information Of The Tags That Factored Into The Description Of Your Image:</h2>
+            <div id='response-tags'>
+                The informations of the tags that factored into the description of your image will appear here after you
+                submit your image.
+            </div>
+            <br>
+            <br>
+            <br>
+            <h2>Initial Image:</h2>
+            <div id='initial-image'>
+                The initial image you submitted, once submitted, will appear here.
+            </div>
+        </div>
+
+        <!--..................................................END MAIN CONTENT..................................................-->
+    </main>
+    <!--..................................................FOOTER..................................................-->
+    <!-- Adds in footer-->
+    <footer>
+        <div class="websiteFooter">
+            <p>&#169; Ross Landgraf 2022. All rights reserved.</p>
+        </div>
+    </footer>
+    <!--..................................................END FOOTER..................................................-->
+
+    <!--..................................................SCRIPTS..................................................-->
+    <script>
+        $("#submit-button").click(function () {
+            var input = $("#message").val()
+                $.post('http://137.184.74.76:3000/imagedescription', {
+                    image_url: input
+                }, function (response) {
+                    $("#initial-image").html('<img src="' + input + '" alt="Initial Image" height="250">')
+                    if(response.caption){
+
+                        $("#response-description").text(response.caption)
+                    $("#response-tags").text(response.tags.map((t) => t.name + "(Confidence: " + t.confidence.toFixed(4) + ")").join(", "))
+                    } else{
+                        $("#response-description").text(response.data)  
+                    }
+                }, "json").fail(function (response) {
+                    $("#response-description").text(response.responseJSON.data)
+                    $("#response-tags").text(response.responseJSON.data)
+                    $("#initial-image").text(response.responseJSON.data)
+                });
+            }
+        );
+
+    </script>
+    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
+    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
+    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
+    <!--DONT FORGET TO ADD IN ERROR HANDLING FOR SMALL IMAGES OR NO TEXT IN IMAGE OR WRONG FILE/NOT AN IMAGE, OR IF IT JUST COULDNT FIGURE OUT WHAT IT IS-->
+
+
+    <!--..................................................END SCRIPTS..................................................-->
+</body>
+
+</html>
