@@ -45,4 +45,4 @@ After following the steps above you should be able to implement this same site o
 
 ## Contributing
 
-Feel free to reach out to me if you have any suggestions on changes.
+Feel free to reach out to me if you have any suggestions on to changes.
