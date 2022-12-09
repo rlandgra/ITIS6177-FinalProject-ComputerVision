@@ -1,4 +1,4 @@
-# ITIS6177 - Final Project - Computer Vision
+# ITIS 6177 - Final Project - Computer Vision
 
 This is the code for a website that can be found [HERE](http://137.184.74.76/index.html). This site features a final project for ITIS 6177 - System Integration at the University of North Carolina Charlotte that implements Microsoft Azures's "Computer Vision" API which is an AI service that analyzes content in images and video.
 
